@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salim Builders Ltd. | Crafting Dhaka's Skyline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#111111',
+                            light: '#FAFAFA',
+                            gold: '#C5A880',
+                            goldHover: '#b0946d',
+                            gray: '#333333',
+                            lightGray: '#E5E5E5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        .glass-dark {
+            background: rgba(17, 17, 17, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-zoom {
+            animation: zoom 20s infinite alternate;
+        }
+        @keyframes zoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Hide scrollbar for clean horizontal scroll if needed */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-white tracking-widest uppercase flex items-center gap-2">
+                <i data-lucide="building-2" class="text-brand-gold"></i>
+                Salim Builders
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center text-sm font-medium text-white/90">
+                <a href="#about" class="hover:text-brand-gold transition">About</a>
+                <a href="#projects" class="hover:text-brand-gold transition">Projects</a>
+                <a href="#sustainability" class="hover:text-brand-gold transition">Sustainability</a>
+                <a href="#news" class="hover:text-brand-gold transition">News</a>
+                <a href="#contact" class="hover:text-brand-gold transition">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white hover:text-brand-gold">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-brand-dark">
+        <!-- Background Image with zoom effect -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Luxury Real Estate" class="w-full h-full object-cover opacity-60 hero-zoom">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-transparent to-brand-dark/90"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mb-24">
+            <p class="text-brand-gold uppercase tracking-[0.3em] text-sm md:text-base mb-4 font-medium">Defining Luxury</p>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-6">
+                Crafting Dhaka's <br> <span class="italic font-light">Iconic Skyline</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Uncompromising quality, avant-garde design, and a legacy of trust. Experience the pinnacle of modern living.
+            </p>
+            <a href="#projects" class="inline-block border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300">
+                Discover Our Portfolio
+            </a>
+        </div>
+
+        <!-- Quick Property Finder (Floating) -->
+        <div class="absolute bottom-0 left-0 w-full z-20 translate-y-1/2 hidden md:block">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="glass-dark p-8 rounded-sm shadow-2xl flex items-end justify-between gap-6 text-white border border-white/5">
+                    <div class="flex-1">
+                        <label class="block text-xs uppercase tracking-widest text-brand-gold mb-3 font-semibold">Location</label>
+                        <select class="w-full bg-transparent border-b border-gray-600 pb-2 focus:outline-none focus:border-brand-gold appearance-none cursor-pointer text-sm">
+                            <option value="" class="bg-brand-dark">Gulshan</option>
+                            <option value="" class="bg-brand-dark">Banani</option>
+                            <option value="" class="bg-brand-dark">Baridhara</option>
+                            <option value="" class="bg-brand-dark">Dhanmondi</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <label class="block text-xs uppercase tracking-widest text-brand-gold mb-3 font-semibold">Property Type</label>
+                        <select class="w-full bg-transparent border-b border-gray-600 pb-2 focus:outline-none focus:border-brand-gold appearance-none cursor-pointer text-sm">
+                            <option value="" class="bg-brand-dark">Residential</option>
+                            <option value="" class="bg-brand-dark">Commercial</option>
+                            <option value="" class="bg-brand-dark">Condominium</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <label class="block text-xs uppercase tracking-widest text-brand-gold mb-3 font-semibold">Status</label>
+                        <select class="w-full bg-transparent border-b border-gray-600 pb-2 focus:outline-none focus:border-brand-gold appearance-none cursor-pointer text-sm">
+                            <option value="" class="bg-brand-dark">Ongoing</option>
+                            <option value="" class="bg-brand-dark">Upcoming</option>
+                            <option value="" class="bg-brand-dark">Completed</option>
+                        </select>
+                    </div>
+                    <div class="pl-4">
+                        <button class="bg-brand-gold text-white px-10 py-4 uppercase tracking-widest text-xs font-bold hover:bg-brand-goldHover transition shadow-lg flex items-center gap-2">
+                            <i data-lucide="search" class="w-4 h-4"></i>
+                            Find Property
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Philosophy Section -->
+    <!-- Increased top padding (pt-64 md:pt-80) ensures it doesn't overlap the floating finder -->
+    <section id="about" class="pt-64 pb-24 md:pt-80 md:pb-32 bg-brand-light relative z-0">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <i data-lucide="gem" class="w-8 h-8 text-brand-gold mx-auto mb-6"></i>
+            <h2 class="text-3xl md:text-5xl font-serif text-brand-dark mb-8">A Legacy of Excellence</h2>
+            <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                At Salim Builders Ltd., we do not just construct buildings; we curate lifestyles. For over two decades, we have been at the forefront of Dhaka's real estate evolution, blending architectural brilliance with structural integrity. Every project is a testament to our commitment to perfection.
+            </p>
+            <a href="#" class="text-brand-gold hover:text-brand-dark font-medium tracking-widest uppercase text-sm border-b border-brand-gold pb-1 transition-colors">Read Our Full Story</a>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio Section -->
+    <section id="projects" class="py-24 bg-brand-dark text-white relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-serif mb-4">Our Portfolio</h2>
+                    <p class="text-gray-400 max-w-lg">Explore our curated collection of architectural masterpieces shaping the future of urban living.</p>
+                </div>
+                
+                <!-- Custom Tabs -->
+                <div class="flex space-x-6 border-b border-gray-800 pb-2">
+                    <button onclick="switchTab('ongoing')" id="tab-ongoing" class="tab-btn pb-2 text-brand-gold border-b-2 border-brand-gold uppercase tracking-widest text-sm font-medium transition-colors">Ongoing</button>
+                    <button onclick="switchTab('upcoming')" id="tab-upcoming" class="tab-btn pb-2 text-gray-500 hover:text-white uppercase tracking-widest text-sm font-medium transition-colors">Upcoming</button>
+                    <button onclick="switchTab('completed')" id="tab-completed" class="tab-btn pb-2 text-gray-500 hover:text-white uppercase tracking-widest text-sm font-medium transition-colors">Completed</button>
+                </div>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="content-ongoing" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Project Card -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden relative h-[450px] w-full mb-6">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Ongoing Project" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                        <div class="absolute top-6 left-6 bg-brand-gold text-white text-[10px] px-4 py-1.5 uppercase tracking-[0.2em] font-bold">Ongoing</div>
+                    </div>
+                    <h3 class="text-3xl font-serif mb-2 group-hover:text-brand-gold transition-colors">Salim The Oasis</h3>
+                    <p class="text-gray-400 flex items-center gap-2 tracking-wide"><i data-lucide="map-pin" class="w-4 h-4 text-brand-gold"></i> Gulshan Avenue, Dhaka</p>
+                </div>
+                <!-- Project Card -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden relative h-[450px] w-full mb-6">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Ongoing Project" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                        <div class="absolute top-6 left-6 bg-brand-gold text-white text-[10px] px-4 py-1.5 uppercase tracking-[0.2em] font-bold">Ongoing</div>
+                    </div>
+                    <h3 class="text-3xl font-serif mb-2 group-hover:text-brand-gold transition-colors">Salim Symphony</h3>
+                    <p class="text-gray-400 flex items-center gap-2 tracking-wide"><i data-lucide="map-pin" class="w-4 h-4 text-brand-gold"></i> Banani, Dhaka</p>
+                </div>
+            </div>
+
+            <div id="content-upcoming" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden relative h-[450px] w-full mb-6">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Upcoming Project" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
+                        <div class="absolute top-6 left-6 bg-brand-gray text-white text-[10px] px-4 py-1.5 uppercase tracking-[0.2em] font-bold">Coming 2027</div>
+                    </div>
+                    <h3 class="text-3xl font-serif mb-2 group-hover:text-brand-gold transition-colors">The Zenith Tower</h3>
+                    <p class="text-gray-400 flex items-center gap-2 tracking-wide"><i data-lucide="map-pin" class="w-4 h-4 text-brand-gold"></i> Baridhara Diplomatic Zone</p>
+                </div>
+            </div>
+
+            <div id="content-completed" class="tab-content hidden grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden relative h-72 w-full mb-4">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Completed" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-serif mb-1 group-hover:text-brand-gold transition-colors">Salim Heritage</h3>
+                    <p class="text-gray-400 text-sm tracking-wide">Dhanmondi</p>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden relative h-72 w-full mb-4">
+                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=600&q=80" alt="Completed" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-serif mb-1 group-hover:text-brand-gold transition-colors">The Belvedere</h3>
+                    <p class="text-gray-400 text-sm tracking-wide">Gulshan 2</p>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden relative h-72 w-full mb-4">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=600&q=80" alt="Completed" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-serif mb-1 group-hover:text-brand-gold transition-colors">Salim Eco-Vista</h3>
+                    <p class="text-gray-400 text-sm tracking-wide">Uttara Sector 4</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="#" class="inline-block border border-gray-600 text-white hover:border-brand-gold hover:text-brand-gold px-12 py-4 uppercase tracking-[0.2em] text-xs font-bold transition-all duration-300">View All Projects</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sustainability & Smart Living -->
+    <section id="sustainability" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80" alt="Sustainability" class="w-full h-[600px] object-cover shadow-2xl">
+                    <div class="absolute -bottom-10 -right-10 bg-brand-dark text-white p-10 max-w-xs hidden md:block border-l-4 border-brand-gold">
+                        <i data-lucide="leaf" class="w-10 h-10 text-brand-gold mb-6"></i>
+                        <h4 class="font-serif text-2xl mb-3">LEED Certified</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Pioneering green building standards and luxury eco-living in Bangladesh.</p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <p class="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold mb-4">Eco-Innovation</p>
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-8">Designing for Tomorrow</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Luxury shouldn't come at the expense of the environment. At Salim Builders, we integrate state-of-the-art smart home technologies and eco-friendly materials to reduce our carbon footprint while enhancing your living experience.
+                    </p>
+                    <ul class="space-y-6 mb-10">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center shrink-0">
+                                <i data-lucide="sun" class="text-brand-gold w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-dark text-sm uppercase tracking-wider mb-1">Solar Integration</h5>
+                                <p class="text-gray-500 text-sm">Solar-powered common areas and optimized natural thermal regulation.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center shrink-0">
+                                <i data-lucide="droplets" class="text-brand-gold w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-dark text-sm uppercase tracking-wider mb-1">Water Conservation</h5>
+                                <p class="text-gray-500 text-sm">Rainwater harvesting and advanced greywater recycling systems.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center shrink-0">
+                                <i data-lucide="smartphone" class="text-brand-gold w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-dark text-sm uppercase tracking-wider mb-1">Smart IoT Living</h5>
+                                <p class="text-gray-500 text-sm">Integrated smart home ecosystems for seamless energy management.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#" class="text-brand-dark font-bold tracking-[0.2em] uppercase text-xs border-b-2 border-brand-gold pb-2 hover:text-brand-gold transition-colors inline-block">Learn about our ESG initiatives</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Insights -->
+    <section id="news" class="py-24 bg-brand-lightGray">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-4">News & Insights</h2>
+                    <p class="text-gray-500">Stay updated with our latest milestones and industry trends.</p>
+                </div>
+                <a href="#" class="hidden md:block text-brand-dark hover:text-brand-gold tracking-[0.2em] uppercase text-xs font-bold transition-colors">View All News</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Article -->
+                <article class="bg-white group cursor-pointer hover:shadow-2xl transition-all duration-500 rounded-sm overflow-hidden border border-gray-100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <p class="text-brand-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Corporate News • Oct 12, 2026</p>
+                        <h3 class="font-serif text-2xl mb-4 group-hover:text-brand-gold transition-colors leading-tight">Salim Builders Wins Excellence in Architecture Award</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">Recognized at the national real estate summit for outstanding design and sustainability in The Oasis project.</p>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-dark group-hover:pl-2 transition-all duration-300 inline-flex items-center gap-2">Read More <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                    </div>
+                </article>
+                <!-- Article -->
+                <article class="bg-white group cursor-pointer hover:shadow-2xl transition-all duration-500 rounded-sm overflow-hidden border border-gray-100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <p class="text-brand-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Project Update • Sep 28, 2026</p>
+                        <h3 class="font-serif text-2xl mb-4 group-hover:text-brand-gold transition-colors leading-tight">Handover Ceremony for Salim Heritage</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">A milestone achieved as we welcome 40 families to their new luxury residences in Dhanmondi.</p>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-dark group-hover:pl-2 transition-all duration-300 inline-flex items-center gap-2">Read More <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                    </div>
+                </article>
+                <!-- Article -->
+                <article class="bg-white group cursor-pointer hover:shadow-2xl transition-all duration-500 rounded-sm overflow-hidden border border-gray-100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <p class="text-brand-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Lifestyle • Sep 10, 2026</p>
+                        <h3 class="font-serif text-2xl mb-4 group-hover:text-brand-gold transition-colors leading-tight">The Rise of Smart Condominiums in Dhaka</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">How IoT integration is changing the way we interact with our living spaces in urban environments.</p>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-dark group-hover:pl-2 transition-all duration-300 inline-flex items-center gap-2">Read More <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center md:hidden mt-10">
+                <a href="#" class="inline-block text-brand-dark font-bold tracking-[0.2em] uppercase text-xs border-b-2 border-brand-gold pb-2 transition-colors">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-brand-dark text-white pt-24 pb-12 border-t-8 border-brand-gold relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="#" class="text-2xl font-serif font-bold text-white tracking-widest uppercase flex items-center gap-3 mb-8">
+                        <div class="bg-brand-gold p-1.5 rounded-sm">
+                            <i data-lucide="building-2" class="text-brand-dark w-6 h-6"></i>
+                        </div>
+                        Salim Builders
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        Shaping the skyline of Dhaka with unparalleled luxury, structural integrity, and modern innovation since 2004.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.3em] mb-8 text-brand-gold">Company</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#about" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Life at Salim</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Leadership Team</a></li>
+                        <li><a href="#sustainability" class="hover:text-white transition-colors">Sustainability</a></li>
+                        <li><a href="#news" class="hover:text-white transition-colors">News & Media</a></li>
+                    </ul>
+                </div>
+
+                <!-- Explore -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.3em] mb-8 text-brand-gold">Properties</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Residential Portfolios</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Commercial Landmarks</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Project Status Updates</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors flex items-center gap-2">Careers <span class="bg-brand-gold text-brand-dark text-[10px] px-2 py-0.5 rounded-sm font-black">OPEN</span></a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Landowner Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.3em] mb-8 text-brand-gold">Get in Touch</h4>
+                    <ul class="space-y-6 text-gray-400 text-sm">
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-gold shrink-0 mt-1"></i>
+                            <span class="leading-relaxed">Salim Tower, Level 10, <br> Gulshan Avenue, Dhaka-1212</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-gold shrink-0"></i>
+                            <span class="tracking-wider">+880 1711 000 000</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-5 h-5 text-brand-gold shrink-0"></i>
+                            <span class="hover:text-brand-gold transition-colors cursor-pointer">info@salimbuilders.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+                <p>&copy; 2026 Salim Builders Ltd. Dhaka, Bangladesh.</p>
+                <div class="flex space-x-6 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-brand-gold transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-dark/95', 'shadow-2xl', 'backdrop-blur-md');
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('bg-brand-dark/95', 'shadow-2xl', 'backdrop-blur-md');
+                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        // Tab Switching Logic for Projects
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Reset all buttons
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('text-brand-gold', 'border-b-2', 'border-brand-gold');
+                el.classList.add('text-gray-500');
+            });
+
+            // Show selected content
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            
+            // Highlight selected button
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.remove('text-gray-500');
+            activeBtn.classList.add('text-brand-gold', 'border-b-2', 'border-brand-gold');
+        }
+    </script>
+</body>
+</html>
